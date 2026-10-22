@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 800" role="img" aria-labelledby="title desc">
+<title id="title">Portrait placeholder</title><desc id="desc">Replace this neutral silhouette with your own portrait photograph.</desc>
+<rect width="700" height="800" fill="#e5e3dc"/>
+<circle cx="350" cy="270" r="125" fill="#c7c5bc"/>
+<path d="M110 800V675C110 525 215 435 350 435S590 525 590 675V800Z" fill="#b4b2a9"/>
+<circle cx="350" cy="270" r="125" fill="none" stroke="#aaa89f" stroke-width="2"/>
+<text x="350" y="735" font-family="Arial,sans-serif" font-size="18" letter-spacing="4" fill="#6e6c64" text-anchor="middle">YOUR PORTRAIT</text>
+</svg>

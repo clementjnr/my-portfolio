@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+<title id="title">POS and Inventory Management</title><desc id="desc">A neutral retail management dashboard mockup placeholder</desc>
+<rect width="1000" height="560" fill="#f0efea"/>
+<circle cx="90" cy="80" r="180" fill="#e6e4dd" opacity=".7"/><circle cx="930" cy="500" r="190" fill="#e4e2db" opacity=".7"/>
+<text x="54" y="500" font-family="Arial,sans-serif" font-size="13" letter-spacing="3" fill="#7c7a72">POS AND INVENTORY MANAGEMENT</text>
+
+        <rect x="190" y="100" width="650" height="360" rx="12" fill="#fff" stroke="#d8d8d2"/>
+        <rect x="190" y="100" width="650" height="38" rx="12" fill="#f5f5f2"/>
+        <circle cx="211" cy="119" r="4" fill="#d1d0ca"/><circle cx="225" cy="119" r="4" fill="#d1d0ca"/><circle cx="239" cy="119" r="4" fill="#d1d0ca"/>
+        <rect x="214" y="155" width="150" height="8" rx="4" fill="#aaa99f"/><rect x="214" y="176" width="115" height="5" rx="2" fill="#deddd7"/>
+        <rect x="214" y="202" width="190" height="70" rx="5" fill="#f6f6f2" stroke="#e5e4de"/><rect x="230" y="216" width="75" height="5" rx="2" fill="#b8b7b0"/><rect x="230" y="234" width="120" height="18" rx="3" fill="#e5e4de"/>
+        <rect x="417" y="202" width="190" height="70" rx="5" fill="#f6f6f2" stroke="#e5e4de"/><rect x="433" y="216" width="75" height="5" rx="2" fill="#b8b7b0"/><rect x="433" y="234" width="120" height="18" rx="3" fill="#dfe8d0"/>
+        <rect x="620" y="202" width="195" height="70" rx="5" fill="#f6f6f2" stroke="#e5e4de"/><rect x="636" y="216" width="75" height="5" rx="2" fill="#b8b7b0"/><rect x="636" y="234" width="120" height="18" rx="3" fill="#e5e4de"/>
+        <rect x="214" y="290" width="380" height="145" rx="5" fill="#fff" stroke="#e5e4de"/><path d="M234 400H575 M234 365H575 M234 330H575" stroke="#e8e7e1"/><path d="M240 390L280 370L322 379L365 342L409 352L454 322L500 335L566 308" stroke="#7e896e" stroke-width="3" fill="none"/>
+        <rect x="607" y="290" width="208" height="145" rx="5" fill="#fff" stroke="#e5e4de"/><rect x="624" y="307" width="85" height="5" rx="2" fill="#b8b7b0"/><rect x="624" y="328" width="172" height="22" rx="3" fill="#f1f0eb"/><rect x="624" y="361" width="172" height="22" rx="3" fill="#f1f0eb"/><rect x="624" y="394" width="172" height="22" rx="3" fill="#e3ead9"/>
+        
+</svg>

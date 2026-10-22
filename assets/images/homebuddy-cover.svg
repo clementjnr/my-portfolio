@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+<title id="title">Home Buddy</title><desc id="desc">A neutral rental platform mockup placeholder for the Home Buddy project cover</desc>
+<rect width="1000" height="560" fill="#f0efea"/>
+<circle cx="90" cy="80" r="180" fill="#e6e4dd" opacity=".7"/><circle cx="930" cy="500" r="190" fill="#e4e2db" opacity=".7"/>
+<text x="54" y="500" font-family="Arial,sans-serif" font-size="13" letter-spacing="3" fill="#7c7a72">HOME BUDDY</text>
+
+        <rect x="195" y="100" width="640" height="365" rx="12" fill="#fff" stroke="#d9d8d2"/>
+        <rect x="195" y="100" width="640" height="38" rx="12" fill="#f5f5f2"/>
+        <circle cx="216" cy="119" r="4" fill="#d1d0ca"/><circle cx="230" cy="119" r="4" fill="#d1d0ca"/><circle cx="244" cy="119" r="4" fill="#d1d0ca"/>
+        <rect x="220" y="155" width="245" height="8" rx="4" fill="#b2b0a8"/><rect x="220" y="174" width="205" height="5" rx="2" fill="#dfded8"/>
+        <rect x="220" y="196" width="585" height="38" rx="5" fill="#f4f3ef" stroke="#e3e2dc"/><rect x="236" y="210" width="160" height="6" rx="3" fill="#b8b7b0"/><rect x="685" y="204" width="105" height="22" rx="4" fill="#292925"/>
+        <g><rect x="220" y="251" width="180" height="175" rx="6" fill="#efeee8"/><rect x="220" y="251" width="180" height="95" rx="6" fill="#d7d5cc"/><path d="M220 324 L269 280 L308 312 L345 270 L400 321V346H220Z" fill="#b9b8ae"/><rect x="234" y="360" width="102" height="6" rx="3" fill="#96958e"/><rect x="234" y="376" width="75" height="5" rx="2" fill="#d0cfc8"/><rect x="234" y="396" width="65" height="12" rx="3" fill="#d9e4ca"/></g>
+        <g><rect x="420" y="251" width="180" height="175" rx="6" fill="#efeee8"/><rect x="420" y="251" width="180" height="95" rx="6" fill="#d8d6cd"/><path d="M420 331 L467 280 L510 315 L551 274 L600 323V346H420Z" fill="#b7b5ab"/><rect x="434" y="360" width="102" height="6" rx="3" fill="#96958e"/><rect x="434" y="376" width="75" height="5" rx="2" fill="#d0cfc8"/><rect x="434" y="396" width="65" height="12" rx="3" fill="#d9e4ca"/></g>
+        <g><rect x="620" y="251" width="185" height="175" rx="6" fill="#efeee8"/><rect x="620" y="251" width="185" height="95" rx="6" fill="#d8d6cd"/><path d="M620 326 L667 278 L708 314 L752 270 L805 323V346H620Z" fill="#b7b5ab"/><rect x="634" y="360" width="102" height="6" rx="3" fill="#96958e"/><rect x="634" y="376" width="75" height="5" rx="2" fill="#d0cfc8"/><rect x="634" y="396" width="65" height="12" rx="3" fill="#d9e4ca"/></g>
+        
+</svg>
