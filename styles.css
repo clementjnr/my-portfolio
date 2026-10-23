@@ -1130,3 +1130,139 @@ h2 em {
     transform: none;
   }
 }
+
+
+/* =========================================
+   MOBILE-ONLY PORTFOLIO IMPROVEMENTS
+   Desktop styles remain unchanged.
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* 1. Larger, centered mobile navigation */
+  .main-nav {
+    align-items: center;
+    text-align: center;
+    padding: 18px 20px 24px;
+    gap: 6px;
+  }
+
+  .main-nav .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  /* 2. Center the introductory statement */
+  .intro-strip-inner {
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-strip-inner > p:first-child {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 3. Hide the circular project arrow buttons */
+  .project-card-info > .arrow-button {
+    display: none;
+  }
+
+  /* Make project titles look like normal headings,
+     but remain easy to tap */
+  .project-title-button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .project-title-button h3 {
+    margin: 0;
+  }
+
+  .project-title-button:focus-visible {
+    outline: 2px solid #77776f;
+    outline-offset: 4px;
+  }
+
+  /* 4. Remove arrows from contact links */
+  .contact-arrow {
+    display: none;
+  }
+
+  /* 5. Footer: logo left, copyright right */
+  .site-footer {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .site-footer .back-top {
+    display: none;
+  }
+
+  .site-footer .copyright {
+    justify-self: end;
+    text-align: right;
+  }
+
+  /* 6. Use the phone's Back button for case studies.
+     The close button is hidden only on mobile. */
+  .modal-close {
+    display: none;
+  }
+
+  /* 7. Hide zoom buttons; pinch-to-zoom remains available */
+  .lightbox-controls #zoom-out,
+  .lightbox-controls #zoom-reset,
+  .lightbox-controls #zoom-in {
+    display: none;
+  }
+
+  /* Keep the X visible and easy to tap */
+  .lightbox-controls #lightbox-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 27px;
+  }
+
+  /* Show mobile-specific pinch-to-zoom instructions */
+  .lightbox-hint-desktop {
+    display: none;
+  }
+
+  .lightbox-hint-mobile {
+    display: inline;
+  }
+
+  /* 8. Hide the prototype button's decorative arrow */
+  .prototype-arrow {
+    display: none;
+  }
+}
+
+/* Default hint visibility on desktop */
+.lightbox-hint-mobile {
+  display: none;
+}
+
