@@ -1266,3 +1266,41 @@ h2 em {
   display: none;
 }
 
+
+
+/* Mobile-only project card refinements */
+@media (max-width: 600px) {
+  /* Hide the image hover label */
+  .cover-open {
+    display: none;
+  }
+
+  /* Make project images visual previews, not clickable controls */
+  .project-cover-button {
+    cursor: default;
+  }
+
+  .project-cover-button:hover .project-cover {
+    transform: none;
+  }
+
+  /* Hide the arrow beside each project title */
+  .project-card-info .arrow-button {
+    display: none;
+  }
+
+  /* Make the project title clearly clickable */
+  .project-card-info h3 {
+    cursor: pointer;
+  }
+
+  .project-card-info h3 a {
+    text-decoration: none;
+  }
+
+  .project-card-info h3 a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+  }
+}
+
