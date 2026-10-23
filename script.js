@@ -1,3 +1,4 @@
+
 const projectData = {
   bmp: {
     eyebrow: "",
@@ -48,8 +49,9 @@ const projectData = {
       ["Site hierarchy", "assets/images/bmp-screen-hierarchy.svg", ""]
     ],
     prototype: "https://www.figma.com/proto/WITDjyByTCFFuZZA0TGTFT/BMP?node-id=0-1&p=f&t=Qz1Otg2O2wJqScyQ-0&scaling=contain&content-scaling=fixed&starting-point-node-id=23%3A23001&show-proto-sidebar=1",
-    prototypeLabel: "View BMP figma prototype"
+    prototypeLabel: "View BMP Figma prototype"
   },
+
   homebuddy: {
     eyebrow: "",
     title: "Home Buddy",
@@ -73,12 +75,12 @@ const projectData = {
     ],
     roles: [
       "Home seekers: Explore listings, compare options, and shortlist properties.",
-      "Agents or landlords: Present accurate property information and respond to enquiries, if supported by your actual product."
+      "Agents or landlords: Present accurate property information and respond to enquiries, if supported by the actual product."
     ],
     features: [
       ["Property discovery", "Show listings with clear images, prices, locations, and essential property details."],
       ["Property details", "Bring the key information together so people can evaluate a home before making an enquiry."],
-      ["Clear next steps", "Make the intended action such as saving a listing, contacting a lister, or requesting a viewing easy to find."],
+      ["Clear next steps", "Make the intended action, such as saving a listing, contacting a lister, or requesting a viewing, easy to find."],
       ["Responsive browsing", "Keep listing cards, detail content, and navigation usable across different screen sizes."]
     ],
     decisions: [
@@ -95,8 +97,9 @@ const projectData = {
       ["Property listing form (filled state)", "assets/images/homebuddy-listing-form.svg", ""]
     ],
     prototype: "https://www.figma.com/proto/Az6Pzdx4GijTluql6KzU8U/Home-Buddy?node-id=302-5770&p=f&t=P0vfNPJHkZtlo4qF-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=303%3A40600",
-    prototypeLabel: "View Home Buddy figma prototype"
+    prototypeLabel: "View Home Buddy Figma prototype"
   },
+
   pos: {
     eyebrow: "",
     title: "POS & Inventory Management System",
@@ -143,129 +146,20 @@ const projectData = {
       ["Point of sale (mobile screen)", "assets/images/pos-screen-mobile.svg", ""]
     ],
     prototype: "https://www.figma.com/proto/SnmPCQbWI8RfRoblACZPbh/POS?node-id=0-1&p=f&t=xqN97rLMZRotsXec-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=113%3A6222&show-proto-sidebar=1",
-    prototypeLabel: "View POS figma prototype"
+    prototypeLabel: "View POS Figma prototype"
   }
 };
 
+
+// =========================================
+// ELEMENTS
+// =========================================
+
 const modal = document.querySelector("#case-modal");
 const modalContent = document.querySelector("#modal-content");
-const closeButtons = document.querySelectorAll("[data-close-modal]");
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 
-function list(items) {
-  return `<ul>${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
-}
-function renderCaseStudy(project) {
-  const screenImages = project.screens.map((screen, index) => `
-    <figure>
-      <img src="${screen[1]}" alt="${screen[0]} screen placeholder" loading="lazy">
-      <figcaption><strong>${String(index + 1).padStart(2, "0")} / ${screen[0]}</strong><br>${screen[2]}</figcaption>
-    </figure>`).join("");
-  const features = project.features.map(feature => `<div><h4>${feature[0]}</h4><p>${feature[1]}</p></div>`).join("");
-  const roles = list(project.roles);
-  const decisions = list(project.decisions);
-  return `
-    <header class="case-hero">
-      
-      <h2 id="modal-title">${project.title}</h2>
-      <p class="case-lead">${project.lead}</p>
-      <div class="case-meta">
-        <div><small>My role</small><strong>${project.role}</strong></div>
-        <div><small>Scope</small><strong>${project.scope}</strong></div>
-        <div><small>Platform</small><strong>${project.platform}</strong></div>
-      </div>
-    </header>
-    <img class="case-cover" src="${project.cover}" alt="${project.coverAlt}">
-    <section class="case-section">
-      <h3>Overview</h3><p>${project.overview}</p>
-    </section>
-    <section class="case-section case-two-col">
-      <div><h3>The problem</h3>${list(project.problem)}</div>
-      <div><h3>Design goals</h3>${list(project.goals)}</div>
-    </section>
-    <section class="case-section">
-      <h3>Who is it for?</h3>${roles}
-    </section>
-    <section class="case-section">
-      <h3>Key features</h3><div class="case-two-col">${features}</div>
-    </section>
-    <section class="case-section">
-      <h3>Selected screens</h3>
-  
-      <div class="case-image-grid">${screenImages}</div>
-    </section>
-    <section class="case-section">
-      <h3>Design decisions</h3>${decisions}
-    </section>
-    <section class="case-section">
-      <h3>Outcome & reflection</h3><p>${project.outcome}</p>
-      
-    </section>
-    <section class="case-section">
-      <h3>Explore the prototype</h3>
-      
-      <a class="prototype-link" href="${project.prototype}" target="_blank" rel="noreferrer">${project.prototypeLabel} ↗</a>
-    </section>`;
-}
-
-function openCaseStudy(key) {
-  const project = projectData[key];
-  if (!project) return;
-  modalContent.innerHTML = renderCaseStudy(project);
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("modal-open");
-  modal.querySelector(".modal-close").focus();
-}
-function closeCaseStudy() {
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("modal-open");
-}
-document.querySelectorAll("[data-open-project]").forEach(button => {
-  button.addEventListener("click", () => openCaseStudy(button.dataset.openProject));
-});
-closeButtons.forEach(button => button.addEventListener("click", closeCaseStudy));
-document.addEventListener("keydown", event => {
-  if (event.key !== "Escape") return;
-
-  if (imageLightbox.classList.contains("is-open")) {
-    closeImageLightbox();
-    return;
-  }
-
-  if (modal.classList.contains("is-open")) {
-    closeCaseStudy();
-  }
-});
-
-menuToggle.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("is-open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-});
-mainNav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-  mainNav.classList.remove("is-open");
-  menuToggle.setAttribute("aria-expanded", "false");
-}));
-document.querySelector("#year").textContent = new Date().getFullYear();
-
-const sectionLinks = [...document.querySelectorAll(".nav-link")];
-const observedSections = ["home", "projects", "contact"].map(id => document.getElementById(id));
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        sectionLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`));
-      }
-    });
-  }, { rootMargin: "-35% 0px -55% 0px" });
-  observedSections.forEach(section => observer.observe(section));
-}
-
-
-// SELECTED SCREEN LIGHTBOX — click, zoom, drag, and pinch
 const imageLightbox = document.querySelector("#image-lightbox");
 const lightboxImage = document.querySelector("#lightbox-image");
 const lightboxCaption = document.querySelector("#lightbox-caption");
@@ -275,6 +169,182 @@ const zoomInButton = document.querySelector("#zoom-in");
 const zoomOutButton = document.querySelector("#zoom-out");
 const zoomResetButton = document.querySelector("#zoom-reset");
 const lightboxCloseButton = document.querySelector("#lightbox-close");
+
+
+// =========================================
+// CASE STUDY CONTENT
+// =========================================
+
+function list(items) {
+  return `<ul>${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
+}
+
+function renderCaseStudy(project) {
+  const screenImages = project.screens.map((screen, index) => `
+    <figure>
+      <img
+        src="${screen[1]}"
+        alt="${screen[0]}"
+        loading="lazy"
+        tabindex="0"
+      >
+      <figcaption>
+        <strong>${String(index + 1).padStart(2, "0")} / ${screen[0]}</strong>
+        <br>${screen[2]}
+      </figcaption>
+    </figure>
+  `).join("");
+
+  const features = project.features.map(feature => `
+    <div>
+      <h4>${feature[0]}</h4>
+      <p>${feature[1]}</p>
+    </div>
+  `).join("");
+
+  return `
+    <header class="case-hero">
+      <h2 id="modal-title">${project.title}</h2>
+      <p class="case-lead">${project.lead}</p>
+
+      <div class="case-meta">
+        <div><small>My role</small><strong>${project.role}</strong></div>
+        <div><small>Scope</small><strong>${project.scope}</strong></div>
+        <div><small>Platform</small><strong>${project.platform}</strong></div>
+      </div>
+    </header>
+
+    <img class="case-cover" src="${project.cover}" alt="${project.coverAlt}">
+
+    <section class="case-section">
+      <h3>Overview</h3>
+      <p>${project.overview}</p>
+    </section>
+
+    <section class="case-section case-two-col">
+      <div>
+        <h3>The problem</h3>
+        ${list(project.problem)}
+      </div>
+      <div>
+        <h3>Design goals</h3>
+        ${list(project.goals)}
+      </div>
+    </section>
+
+    <section class="case-section">
+      <h3>Who is it for?</h3>
+      ${list(project.roles)}
+    </section>
+
+    <section class="case-section">
+      <h3>Key features</h3>
+      <div class="case-two-col">${features}</div>
+    </section>
+
+    <section class="case-section">
+      <h3>Selected screens</h3>
+      <p class="screen-preview-note">Select a screen to inspect it more closely.</p>
+      <div class="case-image-grid">${screenImages}</div>
+    </section>
+
+    <section class="case-section">
+      <h3>Design decisions</h3>
+      ${list(project.decisions)}
+    </section>
+
+    <section class="case-section">
+      <h3>Outcome & reflection</h3>
+      <p>${project.outcome}</p>
+    </section>
+
+    <section class="case-section">
+      <h3>Explore the prototype</h3>
+      <a
+        class="prototype-link"
+        href="${project.prototype}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >${project.prototypeLabel}<span class="prototype-arrow" aria-hidden="true"> ↗</span></a>
+    </section>
+  `;
+}
+
+
+// =========================================
+// OVERLAY HISTORY MANAGEMENT
+// =========================================
+
+// Keep a record of the page state before an overlay opens.
+// This lets the phone's Back button close the overlay first.
+const overlayHistoryKey = "portfolioOverlay";
+
+function pushOverlayHistory(type) {
+  history.pushState(
+    { ...(history.state || {}), [overlayHistoryKey]: type },
+    "",
+    location.href
+  );
+}
+
+function currentOverlay() {
+  return history.state?.[overlayHistoryKey] || null;
+}
+
+
+// =========================================
+// CASE STUDY OPEN / CLOSE
+// =========================================
+
+function openCaseStudy(key) {
+  const project = projectData[key];
+  if (!project || modal.classList.contains("is-open")) return;
+
+  modalContent.innerHTML = renderCaseStudy(project);
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+
+  pushOverlayHistory("case-study");
+
+  // Focus the close control on desktop. It is hidden on mobile.
+  const closeButton = modal.querySelector(".modal-close");
+  if (closeButton && window.matchMedia("(min-width: 601px)").matches) {
+    closeButton.focus();
+  }
+}
+
+function closeCaseStudy(fromHistory = false) {
+  if (!modal.classList.contains("is-open")) return;
+
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+
+  if (!imageLightbox.classList.contains("is-open")) {
+    document.body.classList.remove("modal-open");
+  }
+
+  if (!fromHistory && currentOverlay() === "case-study") {
+    history.back();
+  }
+}
+
+document.querySelectorAll("[data-open-project]").forEach(button => {
+  button.addEventListener("click", () => {
+    openCaseStudy(button.dataset.openProject);
+  });
+});
+
+document.querySelectorAll("[data-close-modal]").forEach(button => {
+  button.addEventListener("click", () => {
+    closeCaseStudy();
+  });
+});
+
+
+// =========================================
+// SELECTED SCREEN LIGHTBOX
+// =========================================
 
 let imageZoom = 1;
 let imageX = 0;
@@ -313,8 +383,11 @@ function setImageZoom(nextZoom) {
 }
 
 function openImageLightbox(image) {
+  if (!image || !imageLightbox || !lightboxImage) return;
+
   lightboxImage.src = image.currentSrc || image.src;
   lightboxImage.alt = image.alt || "Selected project screen";
+
   lightboxCaption.textContent =
     image.closest("figure")?.querySelector("figcaption strong")?.textContent
     || image.alt
@@ -326,33 +399,53 @@ function openImageLightbox(image) {
   imageLightbox.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
 
+  pushOverlayHistory("image-lightbox");
   lightboxCloseButton.focus();
 }
 
-function closeImageLightbox() {
+function closeImageLightbox(fromHistory = false) {
+  if (!imageLightbox.classList.contains("is-open")) return;
+
   imageLightbox.classList.remove("is-open");
   imageLightbox.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("modal-open");
 
   lightboxImage.src = "";
   activePointers.clear();
   isDraggingImage = false;
+  pinchStartDistance = 0;
   lightboxStage.classList.remove("is-dragging");
+
+  if (!modal.classList.contains("is-open")) {
+    document.body.classList.remove("modal-open");
+  }
+
+  if (!fromHistory && currentOverlay() === "image-lightbox") {
+    history.back();
+  }
 }
 
-// Event delegation: works for screens created dynamically in each case study.
+// Open a screen by clicking it or pressing Enter/Space.
 modalContent.addEventListener("click", event => {
   const image = event.target.closest(".case-image-grid img");
-
-  if (image) {
-    openImageLightbox(image);
-  }
+  if (image) openImageLightbox(image);
 });
 
-lightboxCloseButton.addEventListener("click", closeImageLightbox);
+modalContent.addEventListener("keydown", event => {
+  const image = event.target.closest(".case-image-grid img");
+  if (!image || !["Enter", " "].includes(event.key)) return;
+
+  event.preventDefault();
+  openImageLightbox(image);
+});
+
+lightboxCloseButton.addEventListener("click", () => {
+  closeImageLightbox();
+});
 
 document.querySelectorAll("[data-close-lightbox]").forEach(button => {
-  button.addEventListener("click", closeImageLightbox);
+  button.addEventListener("click", () => {
+    closeImageLightbox();
+  });
 });
 
 zoomInButton.addEventListener("click", () => {
@@ -365,16 +458,18 @@ zoomOutButton.addEventListener("click", () => {
 
 zoomResetButton.addEventListener("click", resetImageZoom);
 
-// Mouse wheel / trackpad zoom.
+// Wheel zoom for desktop.
 lightboxStage.addEventListener("wheel", event => {
-  event.preventDefault();
+  if (!imageLightbox.classList.contains("is-open")) return;
 
-  const zoomChange = event.deltaY < 0 ? 0.2 : -0.2;
-  setImageZoom(imageZoom + zoomChange);
+  event.preventDefault();
+  setImageZoom(imageZoom + (event.deltaY < 0 ? 0.2 : -0.2));
 }, { passive: false });
 
-// Pointer controls: drag to explore a zoomed image and pinch on touchscreens.
+// Pointer events support dragging and pinch-to-zoom.
 lightboxStage.addEventListener("pointerdown", event => {
+  if (!imageLightbox.classList.contains("is-open")) return;
+
   activePointers.set(event.pointerId, {
     x: event.clientX,
     y: event.clientY
@@ -420,7 +515,6 @@ lightboxStage.addEventListener("pointermove", event => {
     setImageZoom(
       pinchStartZoom * (currentDistance / pinchStartDistance)
     );
-
     return;
   }
 
@@ -436,6 +530,8 @@ lightboxStage.addEventListener("pointermove", event => {
 });
 
 function finishPointer(event) {
+  if (!activePointers.has(event.pointerId)) return;
+
   activePointers.delete(event.pointerId);
 
   if (activePointers.size < 2) {
@@ -457,3 +553,96 @@ lightboxStage.addEventListener("pointerup", finishPointer);
 lightboxStage.addEventListener("pointercancel", finishPointer);
 lightboxStage.addEventListener("lostpointercapture", finishPointer);
 
+
+// =========================================
+// ESCAPE KEY AND PHONE BACK BUTTON
+// =========================================
+
+document.addEventListener("keydown", event => {
+  if (event.key !== "Escape") return;
+
+  if (imageLightbox.classList.contains("is-open")) {
+    closeImageLightbox();
+  } else if (modal.classList.contains("is-open")) {
+    closeCaseStudy();
+  }
+});
+
+window.addEventListener("popstate", event => {
+  // Back closes the image preview first.
+  if (imageLightbox.classList.contains("is-open")) {
+    closeImageLightbox(true);
+    return;
+  }
+
+  // If the browser moved back to the case-study state,
+  // keep the case study open.
+  if (event.state?.[overlayHistoryKey] === "case-study") {
+    return;
+  }
+
+  // Otherwise close the open case study.
+  if (modal.classList.contains("is-open")) {
+    closeCaseStudy(true);
+  }
+});
+
+
+// =========================================
+// MOBILE NAVIGATION
+// =========================================
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("is-open");
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation" : "Open navigation"
+  );
+});
+
+mainNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+  });
+});
+
+
+// =========================================
+// FOOTER YEAR
+// =========================================
+
+document.querySelector("#year").textContent = new Date().getFullYear();
+
+
+// =========================================
+// ACTIVE NAVIGATION SECTION
+// =========================================
+
+const sectionLinks = [...document.querySelectorAll(".nav-link")];
+
+const observedSections = ["home", "projects", "contact"]
+  .map(id => document.getElementById(id))
+  .filter(Boolean);
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      sectionLinks.forEach(link => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === `#${entry.target.id}`
+        );
+      });
+    });
+  }, {
+    rootMargin: "-35% 0px -55% 0px"
+  });
+
+  observedSections.forEach(section => observer.observe(section));
+}
